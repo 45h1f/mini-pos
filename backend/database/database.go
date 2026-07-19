@@ -16,7 +16,11 @@ var DB *gorm.DB
 
 // InitDatabase initializes the SQLite connection and runs auto-migration.
 func InitDatabase() error {
-	dataDir := "data"
+	configDir, err := os.UserConfigDir()
+	if err != nil {
+		configDir = "."
+	}
+	dataDir := filepath.Join(configDir, "pos-mini", "data")
 	if err := os.MkdirAll(dataDir, 0755); err != nil {
 		return err
 	}

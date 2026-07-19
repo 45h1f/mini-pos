@@ -10,7 +10,11 @@ var Logger *slog.Logger
 
 // InitLogger initializes the structured logger to write to logs/app.log
 func InitLogger() error {
-	logDir := "logs"
+	configDir, err := os.UserConfigDir()
+	if err != nil {
+		configDir = "."
+	}
+	logDir := filepath.Join(configDir, "pos-mini", "logs")
 	if err := os.MkdirAll(logDir, 0755); err != nil {
 		return err
 	}
