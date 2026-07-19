@@ -26,6 +26,17 @@ sudo apt-get update --allow-releaseinfo-change
 sudo apt-get install -y libgtk-3-dev libwebkit2gtk-4.0-dev build-essential
 ```
 
+### 🍎 macOS Specific Dependencies
+If you are setting up on a Mac, you need the Xcode Command Line Tools to compile the native window bindings.
+1. Open your terminal and run:
+   ```bash
+   xcode-select --install
+   ```
+2. (Optional but recommended) Install Go and Node using Homebrew:
+   ```bash
+   brew install go node
+   ```
+
 *(Note: If you run into release-info-change errors during `apt-get update`, ensure you use the `--allow-releaseinfo-change` flag as written above).*
 
 ---
@@ -49,19 +60,29 @@ This command will compile the Go backend, start the Vite frontend server, and op
 
 When you are ready to create a standalone, production-ready executable for your users:
 
-### 1. Build for your Current OS (Linux)
+### 1. Build for your Current OS (Linux or Mac)
 Run this from the project root:
 ```bash
 wails build
 ```
-Once completed, you will find your standalone application binary in the `build/bin/` folder.
+Once completed, you will find your standalone application binary (or `.app` bundle on Mac) in the `build/bin/` folder.
 
-### 2. Cross-Compile for Windows (from Linux)
-Because we bypassed CGO by using the pure-Go SQLite driver, cross-compiling to Windows from Linux is incredibly simple.
+### 2. Build a Universal Mac App (Apple Silicon + Intel)
+If you are building on a Mac and want an application that runs natively on both older Intel Macs and newer M1/M2/M3 Macs, use the universal target:
+```bash
+wails build -platform darwin/universal
+```
 
-First, ensure you have the Windows cross-compiler tools installed on your Linux machine:
+### 3. Cross-Compile for Windows (from Linux or Mac)
+Because we bypassed CGO by using the pure-Go SQLite driver, cross-compiling to Windows is incredibly simple.
+
+**If on Linux**, install the Windows cross-compiler tools:
 ```bash
 sudo apt install -y mingw-w64
+```
+**If on Mac**, install them via Homebrew:
+```bash
+brew install mingw-w64
 ```
 
 Then, instruct Wails to build for Windows:
