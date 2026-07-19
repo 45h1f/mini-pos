@@ -1,0 +1,29 @@
+/* Print Styles for Receipts (Phase 4) */
+@media print {
+  /* Hide the entire app by default when printing */
+  body * {
+    visibility: hidden;
+  }
+  
+  /* Only show the element with the id 'print-section' */
+  #print-section, #print-section * {
+    visibility: visible;
+  }
+  
+  #print-section {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 80mm; /* Standard 80mm thermal receipt width */
+    padding: 5mm;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace; /* Monospace is best for receipts */
+    font-size: 12px;
+    color: #000;
+  }
+
+  /* Remove all margins added by the browser */
+  @page {
+    margin: 0;
+  }
+}
