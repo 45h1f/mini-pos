@@ -4,3 +4,14 @@
 {"time":"2026-07-19T20:10:36.461423562+06:00","level":"INFO","msg":"Database auto-migration completed successfully"}
 {"time":"2026-07-19T20:13:42.790931293+06:00","level":"INFO","msg":"Database connection established"}
 {"time":"2026-07-19T20:13:42.793898999+06:00","level":"INFO","msg":"Database auto-migration completed successfully"}
+{"time":"2026-07-19T20:56:04.117914+06:00","level":"INFO","msg":"Database connection established"}
+{"time":"2026-07-19T20:56:04.120278+06:00","level":"INFO","msg":"Database auto-migration completed successfully"}
+{"time":"2026-07-19T20:56:10.107637+06:00","level":"INFO","msg":"Database connection established"}
+{"time":"2026-07-19T20:56:10.110494+06:00","level":"INFO","msg":"Database auto-migration completed successfully"}
+{"time":"2026-07-19T20:56:33.91888+06:00","level":"INFO","msg":"Database connection established"}
+{"time":"2026-07-19T20:56:33.925475+06:00","level":"INFO","msg":"Database auto-migration completed successfully"}
+{"time":"2026-07-19T20:56:34.06797+06:00","level":"INFO","msg":"Application started"}
+{"time":"2026-07-19T20:58:39.022839+06:00","level":"INFO","msg":"Database connection established"}
+{"time":"2026-07-19T20:58:39.026052+06:00","level":"INFO","msg":"Database auto-migration completed successfully"}
+{"time":"2026-07-19T21:02:49.925104+06:00","level":"INFO","msg":"Database connection established"}
+{"time":"2026-07-19T21:02:49.928545+06:00","level":"INFO","msg":"Database auto-migration completed successfully"}
